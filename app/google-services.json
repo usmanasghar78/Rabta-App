@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "579071024497",
+    "firebase_url": "https://rabtta-u058.firebaseio.com",
+    "project_id": "rabtta-u058",
+    "storage_bucket": "rabtta-u058.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579071024497:android:85f23a7bbeb83245",
+        "android_client_info": {
+          "package_name": "com.example.rabta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "579071024497-gfkurd6fs4th9445pjjnp6qni8tp76s0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rabta",
+            "certificate_hash": "b7df2cff36e412949f944e52aaf02919c01cb810"
+          }
+        },
+        {
+          "client_id": "579071024497-j3m301e8chtu8khsm49ncolmicukc4hc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8RC4z0jC2o7sGqjrQMFgUbHUJ9550O20"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "579071024497-j3m301e8chtu8khsm49ncolmicukc4hc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
