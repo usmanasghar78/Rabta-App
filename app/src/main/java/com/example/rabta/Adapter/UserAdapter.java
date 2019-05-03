@@ -1,6 +1,7 @@
 package com.example.rabta.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.rabta.MessageActivity;
 import com.example.rabta.Model.User;
 import com.example.rabta.R;
 
@@ -34,14 +36,21 @@ public UserAdapter (Context mContext, List<User> mUsers){
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-User user = mUsers.get(position);
+final User user = mUsers.get(position);
 holder.username.setText(user.getUsername());
 if(user.getImageURL().equals("default")){
     holder.profile_image.setImageResource(R.mipmap.ic_launcher);
 
 }else {
     Glide.with(mContext).load(user.getImageURL()).into(holder.profile_image);
-}
+}   holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, MessageActivity.class);
+                intent.putExtra("userid", user.getId());
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override
