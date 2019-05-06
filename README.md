@@ -1,4 +1,4 @@
-<h1>RAABTA</h1>
+<h1>RABTA APP | Messaging Application with 100% working</h1>
 
 <p>P.S: If ou're going to download the full project please use your own firebase API, the one in the project will NOT be work (as this API is connected with my app) and the app may not work.</p>
 </br>
@@ -11,8 +11,8 @@
 <strong>2 - Firebase Panel</strong>
 
 
-1 - Create Firebase Project (<a href="https://console.firebase.google.com/" rel="nofollow">https://console.firebase.google.com/</a>);
-2 - import the file google-service.json into your project as the instructions say;
-3 - Change Pay Plan to either Flame or Blaze;
-4 - Go to Firebase -&gt; Registration and activate Login/Registrtion with email
+1 - Create Firebase Project (<a href="https://console.firebase.google.com/" rel="nofollow">https://console.firebase.google.com/</a>);</br>
+2 - import the file google-service.json into your project as the instructions say;</br>
+3 - Change Pay Plan to either Flame or Blaze;</br>
+4 - Go to Firebase -&gt; Registration and activate Login/Registrtion with email</br>
 5 - Go to Firebase -&gt; storage and activate it;</p>
