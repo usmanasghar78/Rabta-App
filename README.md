@@ -6,3 +6,13 @@
 <p><strong>1 - Project</strong>
 1 - Open the Project in your android studio;
 2 - !!!!IMPORTANT!!!! Change the Package Name. You can check how to do that here (<a href="https://stackoverflow.com/questions/16804093/android-studio-rename-package" rel="nofollow">https://stackoverflow.com/questions/16804093/android-studio-rename-package</a>)</p>
+</br></br>
+<p>
+<strong>2 - Firebase Panel</strong>
+
+
+1 - Create Firebase Project (<a href="https://console.firebase.google.com/" rel="nofollow">https://console.firebase.google.com/</a>);
+2 - import the file google-service.json into your project as the instructions say;
+3 - Change Pay Plan to either Flame or Blaze;
+4 - Go to Firebase -&gt; Registration and activate Login/Registrtion with email
+5 - Go to Firebase -&gt; storage and activate it;</p>
