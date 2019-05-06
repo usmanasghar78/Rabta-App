@@ -4,7 +4,7 @@
 </br>
 <h1>Implementation Guide</h1>
 <p><strong>1 - Project</strong>
-1 - Open the Project in your android studio;
+1 - Open the Project in your android studio;</br>
 2 - !!!!IMPORTANT!!!! Change the Package Name. You can check how to do that here (<a href="https://stackoverflow.com/questions/16804093/android-studio-rename-package" rel="nofollow">https://stackoverflow.com/questions/16804093/android-studio-rename-package</a>)</p>
 </br></br>
 <p>
