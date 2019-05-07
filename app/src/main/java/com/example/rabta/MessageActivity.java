@@ -42,6 +42,7 @@ public class MessageActivity extends AppCompatActivity {
     List<Chat> mchat;
     RecyclerView recyclerView;
     Intent intent;
+    String userid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +67,6 @@ public class MessageActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
 
 
-
         profile_image=findViewById(R.id.profile_image);
         username=findViewById(R.id.username);
         btn_send=findViewById(R.id.btn_send);
@@ -74,7 +74,7 @@ public class MessageActivity extends AppCompatActivity {
 
 
         intent=getIntent();
-       final String userid=intent.getStringExtra("userid");
+       userid=intent.getStringExtra("userid");
        fuser=FirebaseAuth.getInstance().getCurrentUser();
        btn_send.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -115,7 +115,7 @@ public class MessageActivity extends AppCompatActivity {
             }
         });
     }
-    private void sendMessage(String sender, String receiver,String message){
+    private void sendMessage(String sender, final String receiver,String message){
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
         HashMap<String,Object> hashMap = new HashMap<>();
         hashMap.put("sender",sender);
@@ -123,6 +123,28 @@ public class MessageActivity extends AppCompatActivity {
         hashMap.put("message",message);
 
         reference.child("chats").push().setValue(hashMap);
+
+
+        // add user to chat fragment
+        final DatabaseReference chatRef = FirebaseDatabase.getInstance().getReference("Chatlist")
+                .child(fuser.getUid())
+                .child(userid);
+
+        chatRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (!dataSnapshot.exists()){
+                    chatRef.child("id").setValue(userid);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
 
     }
      private void readMesagges(final String myid, final String userid, final String imageurl){

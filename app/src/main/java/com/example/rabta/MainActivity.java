@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.rabta.Fragments.ChatsFragment;
+import com.example.rabta.Fragments.ProfileFragment;
 import com.example.rabta.Fragments.UsersFragment;
 import com.example.rabta.Model.User;
 import com.google.firebase.auth.FirebaseAuth;
@@ -76,6 +77,7 @@ DatabaseReference reference;
 
           viewPagerAdapter.addFragment(new ChatsFragment(), "Chats");
           viewPagerAdapter.addFragment(new UsersFragment(), "Users");
+        viewPagerAdapter.addFragment(new ProfileFragment(), "Profile");
           viewPager.setAdapter(viewPagerAdapter);
           tabLayout.setupWithViewPager(viewPager);
 

@@ -1,7 +1,5 @@
 package com.example.rabta.Fragments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -57,7 +55,7 @@ private List<User> mUser;
                         mUser.add(user);
                     }
                 }
-                userAdapter = new UserAdapter(getContext(),mUser);
+                userAdapter = new UserAdapter(getContext(),mUser, true);
                 recyclerView.setAdapter(userAdapter);
 
             }
