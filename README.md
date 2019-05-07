@@ -1,6 +1,6 @@
 <h1>RABTA APP | Messaging Application with 100% working</h1>
 
-<p>P.S: If ou're going to download the full project please use your own firebase API, the one in the project will NOT be work (as this API is connected with my app) and the app may not work.</p>
+<p>P.S: If ou're going to download the full project please use your own firebase API, the one in the project will NOT be work (as this API is connected with my app) and the app may not work.</p></br><p> add your json in this project</p>
 </br>
 <h1>Implementation Guide</h1>
 <p><strong>1 - Project</strong>
