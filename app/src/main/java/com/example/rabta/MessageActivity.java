@@ -208,6 +208,18 @@ public class MessageActivity extends AppCompatActivity {
 
         reference.updateChildren(hashMap);
     }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        status("online");
 
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        reference.removeEventListener(seenListener);
+        status("offline");
+    }
 
 }
