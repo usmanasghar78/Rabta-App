@@ -77,6 +77,7 @@ Button btn_register; FirebaseAuth auth; DatabaseReference reference;
                             hashMap.put("username",username);
                             hashMap.put("imageURL","default");
                             hashMap.put("status","offline");
+                            hashMap.put("search",username.toLowerCase());
                             reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
