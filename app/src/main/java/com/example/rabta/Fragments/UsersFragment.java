@@ -55,7 +55,7 @@ private List<User> mUser;
                         mUser.add(user);
                     }
                 }
-                userAdapter = new UserAdapter(getContext(),mUser, true);
+                userAdapter = new UserAdapter(getContext(),mUser, false);
                 recyclerView.setAdapter(userAdapter);
 
             }

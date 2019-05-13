@@ -90,12 +90,14 @@ DatabaseReference reference;
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.logout:
+
+            case  R.id.logout:
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(MainActivity.this, StartActivity.class));
-                finish();
+                // change this code beacuse your app will crash
+                startActivity(new Intent(MainActivity.this, StartActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 return true;
         }
+
         return false;
     }
     class ViewPagerAdapter extends FragmentPagerAdapter{
