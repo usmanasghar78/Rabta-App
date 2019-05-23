@@ -18,6 +18,7 @@ import com.example.rabta.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
@@ -54,7 +55,11 @@ if(user.getImageURL().equals("default")){
     Glide.with(mContext).load(user.getImageURL()).into(holder.profile_image);
 }
 
-
+        if (ischat){
+            lastMessage(user.getId(), holder.last_msg);
+        } else {
+            holder.last_msg.setVisibility(View.GONE);
+        }
 
         if (ischat){
             if (user.getStatus().equals("online")){
@@ -104,11 +109,10 @@ if(user.getImageURL().equals("default")){
         last_msg = itemView.findViewById(R.id.last_msg);
     }
 }
-    //check for last message
     private void lastMessage(final String userid, final TextView last_msg){
         theLastMessage = "default";
         final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Chats");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("chats");
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -123,5 +127,23 @@ if(user.getImageURL().equals("default")){
                     }
                 }
 
+                switch (theLastMessage){
+                    case  "default":
+                        last_msg.setText("No Message");
+                        break;
 
+                    default:
+                        last_msg.setText(theLastMessage);
+                        break;
+                }
+
+                theLastMessage = "default";
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
 }
