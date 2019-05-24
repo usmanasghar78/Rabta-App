@@ -1,7 +1,5 @@
 package com.example.rabta.Fragments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -12,9 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.rabta.Adapter.UserAdapter;
-import com.example.rabta.Model.Chat;
 import com.example.rabta.Model.Chatlist;
 import com.example.rabta.Model.User;
+import com.example.rabta.Notifications.Token;
 import com.example.rabta.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -72,12 +70,16 @@ public class ChatsFragment extends Fragment {
         });
 
 
-
+        updateToken(FirebaseInstanceId.getInstance().getToken());
 
         return view;
     }
 
-
+    private void updateToken(String token){
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Tokens");
+        Token token1 = new Token(token);
+        reference.child(fuser.getUid()).setValue(token1);
+    }
 
     private void chatList() {
         mUsers = new ArrayList<>();
